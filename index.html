@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1><i class="fas fa-tasks"></i>FlowTask</h1>
+                <div class="progress-container">
+                    <div class="progress-info">
+                        <span>Task Progress</span>
+                        <span id="progress-percentage">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progress" class="progress"></div>
+                    </div>
+                </div>
+                <div class="progress-stats">
+                    <div class="stat">
+                        <span class="stat-value" id="completed-count">0</span>
+                        <span class="stat-label">Completed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="pending-count">0</span>
+                        <span class="stat-label">Pending</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="total-count">0</span>
+                        <span class="stat-label">Total</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="content-section">
+                <h2>Add New Task</h2>
+                <div class="add-task-card">
+                    <div class="form-group">
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="task-input">Task Title</label>
+                                <input type="text" id="task-input" placeholder="What needs to be done?" required>
+                            </div>
+                            <button id="add-btn" class="btn btn-primary">
+                                <i class="fas fa-plus"></i> Add Task
+                            </button>
+                        </div>
+                        <div class="input-group">
+                            <label for="task-description">Description <span class="optional">(optional)</span></label>
+                            <textarea id="task-description" placeholder="Add details about your task..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>My Tasks</h2>
+                    <div class="task-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="pending">Pending</button>
+                        <button class="filter-btn" data-filter="completed">Completed</button>
+                    </div>
+                </div>
+                <div id="task-list" class="task-list">
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
