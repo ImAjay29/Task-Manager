@@ -1,4 +1,3 @@
-
 const taskInput = document.getElementById('task-input');
 const taskDescription = document.getElementById('task-description');
 const addBtn = document.getElementById('add-btn');
